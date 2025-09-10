@@ -1,0 +1,5 @@
+{
+  "hi": "Hello! How are you feeling today?",
+  "stress": "It’s okay. Take a deep breath. Can you tell me more?",
+  "default": "Sorry, I don’t understand. Can you try rephrasing?"
+}
