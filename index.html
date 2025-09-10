@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Youth Mental Health Chatbot</title>
+</head>
+<body>
+  <h2>Chatbot</h2>
+  <input type="text" id="msg" placeholder="Type your message">
+  <button onclick="sendMsg()">Send</button>
+  <p id="reply"></p>
+
+  <script>
+    function sendMsg() {
+      const message = document.getElementById('msg').value;
+      fetch('/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message })
+      })
+      .then(res => res.json())
+      .then(data => document.getElementById('reply').innerText = data.reply)
+      .catch(err => console.error(err));
+    }
+  </script>
+</body>
+</html>
